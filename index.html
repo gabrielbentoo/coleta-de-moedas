@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de coleta de itens</title>
+    <link rel="shortcut icon" href="moeda.jpeg" type="image/jpeg">
+</head>
+<body>
+    <p id="items">Itens coletados: 0 </p>
+    <button id="collect">Coletar Moedas</button>
+    <p id="win-message"></p>
+
+    <script>
+        let collectedItems = 0;
+        document.getElementById("collect").addEventListener("click", () => {
+            while (collectedItems < 10) {
+                collectedItems++;
+                document.getElementById("items").textContent = `Itens coletados: ${collectedItems}`;
+                break;
+            }
+
+            if (collectedItems === 10) {
+                document.getElementById("win-message").textContent = "Parabéns, você coletou todas as moedas";
+                document.getElementById("collect").disabled = true;q
+            }
+        }) 
+
+    </script>
+    
+</body>
+</html>
